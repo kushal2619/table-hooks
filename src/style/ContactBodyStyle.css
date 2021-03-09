@@ -1,0 +1,102 @@
+.contact-type {
+    font-size: small;
+    height: 20px;
+    _vertical-align: bottom;
+    color: rgb(100, 100, 100);
+}
+
+.contact-table > tbody > tr:not(:nth-child(1)) {
+    height: 50px;
+}
+
+.table-row:hover {
+    background-color: #f1f3f4;
+    border-radius: 8px;
+}
+
+.table-row > td, .name-cell > div {
+    font-size: 16px;
+    vertical-align: baseline;
+    max-width: 300px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    border-spacing: 5px 15px;
+}
+
+.table-row > td:not(:first-child) {
+    padding-left: 10px;
+}
+
+.name-cell {
+    display: flex;
+    _flex: 1;
+    _justify-content: center;
+    align-items: center;
+}
+
+.name-cell-img {
+    background-color: teal;
+    color: white;
+    border-radius: 50%;
+    padding: 7px 10px;
+    margin: 0 15px 0 8px;
+}
+
+.name-cell-img {
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.option-cell {
+    display: flex;
+    _justify-content: center;
+    align-items: center;
+    padding: 7px 0 10px 0;
+}
+
+.option-cell-visibility-hidden {
+    visibility: hidden;
+}
+
+.star-img {
+    padding: 4px;
+    margin: 0 3px;
+    width: 17px;
+    height: 17px;
+}
+.star-img:hover {
+    border-radius: 50%;
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+.edit-img {
+    padding: 4px;
+    margin: 0 3px;
+    width: 17px;
+    height: 17px;
+}
+.edit-img:hover {
+    border-radius: 50%;
+    background-color:#e6e6e6;
+    cursor: pointer;
+}
+
+.bin-img {
+    padding: 4px;
+    margin: 0 3px;
+    width: 17px;
+    height: 17px;
+}
+.bin-img:hover {
+    border-radius: 50%;
+    background-color:#e6e6e6;
+    cursor: pointer;
+}

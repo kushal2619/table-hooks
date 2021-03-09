@@ -1,0 +1,9 @@
+.contact-table {
+    margin: 1% 2%;
+    _width: calc(100vw - 4%);
+    _height: calc(100vh - 31px);
+    border-spacing: 0 15px;
+    white-space: nowrap;
+    display: table;
+    overflow-x: auto;
+}
