@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import {updateIDB, deleteInIDB} from "./services/IndexedDBServices"
 import { HANDLE_MODAL_DISPLAY, UPDATE_CONTACT_LIST } from "./constants";
@@ -9,6 +9,7 @@ import binSVG from "./img/bin.svg";
 import "./style/ContactBodyStyle.css";
 
 const handleStar = async(event, contactList, onAction) => {
+  console.log(contactList);
   const id = event.target.dataset.name.split("-")[1];
   const targetContact = contactList.find(contact => contact.uid === id);
   const updatedContact = {...targetContact, isFavourite: !targetContact.isFavourite};
@@ -50,9 +51,6 @@ const handleOnDelete = async(event, contactList, onAction) => {
 }
 
 function ContactBody(props) {
-
-  let [currentRowID, setCurrentRowID] = useState(null);
-
   return (
     <tbody>
       <tr>
@@ -67,8 +65,6 @@ function ContactBody(props) {
           <tr className="table-row" 
               key={contact.uid} 
               id={`row-${contact.uid}`}
-              onMouseEnter={(event) => setCurrentRowID(event.target.closest(".table-row").id.split("-")[1])}
-              onMouseLeave={() => setCurrentRowID(null)}
           >
             <td className="name-cell">
                 <div className="name-cell-img">
@@ -104,25 +100,19 @@ function ContactBody(props) {
             <td className="option-cell">
               <img  src = {(contact.isFavourite) ? blueStarSVG : starSVG} 
                     alt = "starred"
-                    className = { (contact.uid === currentRowID)? "star-img"
-                                    :"star-img option-cell-visibility-hidden" 
-                                }
+                    className = "star-img"
                     data-name = {`star-${contact.uid}`}
                     onClick = {(event) => handleStar(event, props.contactList, props.onAction)}
               />
               <img  src = {editSVG} 
                     alt = "" 
-                    className = { (contact.uid === currentRowID)? "edit-img"
-                                    :"edit-img option-cell-visibility-hidden"
-                                }
+                    className = "edit-img"
                     data-name = {`edit-${contact.uid}`}
                     onClick = {(event) => handleOnEdit(event, props.contactList, props.onAction)}
               />
               <img  src = {binSVG}
                     alt = "delete"
-                    className = { (contact.uid === currentRowID)? "bin-img"
-                                    :"bin-img option-cell-visibility-hidden"
-                                }
+                    className = "bin-img"
                     data-name = {`bin-${contact.uid}`}
                     onClick = {(event) => handleOnDelete(event, props.contactList, props.onAction)}
               />

@@ -4,9 +4,10 @@ import addSVG from "./img/add.svg";
 import {HANDLE_MODAL_DISPLAY} from "./constants"
 import "./style/HeaderStyle.css";
 
+function Header(props) {
+  const onAction = props.onAction;
 
-const handleAddContactbutton = (onAction) => {
-  
+  const handleAddContactbutton = useCallback(() => {
     const payload = {
       showModal: true,
       formContactDraft: {
@@ -27,14 +28,9 @@ const handleAddContactbutton = (onAction) => {
         }
       }
     }
-    
     onAction({type: HANDLE_MODAL_DISPLAY, payload: payload});
-}
 
-function Header(props) {
-  const onAction = props.onAction;
-
-  const memoizedHandleAddContactbutton = useCallback(handleAddContactbutton, [onAction])
+  }, [onAction])
   
   return (
     <thead>
@@ -47,7 +43,7 @@ function Header(props) {
           <img  src={addSVG} 
                 alt="Add Contact" 
                 className="add-button"
-                onClick={() => memoizedHandleAddContactbutton(onAction)}
+                onClick={handleAddContactbutton}
           />
         </th>
       </tr>

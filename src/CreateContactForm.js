@@ -107,7 +107,7 @@ function CreateContactForm(props) {
             <div className="row-field-header-text">
                 First name
             </div>
-            <input type="text" 
+            <input  type="text" 
                     placeholder="First name" 
                     className="row-field-input"
                     value={state.firstName}
@@ -116,7 +116,6 @@ function CreateContactForm(props) {
                         payload:{name: "firstName", value: event.target.value}
                       }
                     )}
-                    data-name = "firstName"
             />
           </div>
 
@@ -124,7 +123,7 @@ function CreateContactForm(props) {
             <div className="row-field-header-text">
                 Last name
             </div>
-            <input type="text" 
+            <input  type="text" 
                     placeholder="Last name" 
                     className="row-field-input"
                     value={state.lastName}
@@ -133,7 +132,6 @@ function CreateContactForm(props) {
                         payload:{name: "lastName", value: event.target.value}
                       }
                     )}
-                    data-name = "lastName"
             />
           </div>
         </div>
@@ -154,7 +152,6 @@ function CreateContactForm(props) {
                         payload:{name: "companyName", value: event.target.value}
                       }
                     )}
-                    data-name = "companyName"
             />
           </div>
 
@@ -171,7 +168,6 @@ function CreateContactForm(props) {
                         payload:{name: "jobTitle", value: event.target.value}
                       }
                     )}
-                    data-name = "jobTitle"
             />
           </div>
         </div>
@@ -192,7 +188,6 @@ function CreateContactForm(props) {
                         payload:{name: "emailID", value: event.target.value}
                       }
                     )}
-                    data-name = "emailID"
             />
           </div>
         </div>
@@ -204,7 +199,7 @@ function CreateContactForm(props) {
             <div className="row-field-header-text">
                 Phone
             </div>
-            <input type="text" 
+            <input  type="text" 
                     placeholder="Phone" 
                     className="row-field-input"
                     value={state.phone}
@@ -213,7 +208,6 @@ function CreateContactForm(props) {
                         payload:{name: "phone", value: event.target.value}
                       }
                     )}
-                    data-name = "phone"
             />
           </div>
         </div>
@@ -230,8 +224,8 @@ function CreateContactForm(props) {
             Cancel
         </div>
         <button className={(checkAllInputValues())? "footer-button"
-                                                        : "footer-button disabled-save-button"}
-                id="create-contact-form-save-button"
+                                                  : "footer-button disabled-save-button"
+                          }
                 type="submit"
         >
             Save
